@@ -1,11 +1,9 @@
-import NavBar from "./components/NavBar";
-import TaskFetcher from "./TaskFetcher";
+import TaskRenderer from "./TaskRenderer";
 
 function App() {
   return (
     <div>
-      <NavBar></NavBar>
-      <TaskFetcher></TaskFetcher>
+      <TaskRenderer></TaskRenderer>
     </div>
   );
 }
