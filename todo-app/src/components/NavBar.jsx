@@ -1,3 +1,4 @@
+import AddTaskModal from "./AddTaskModal";
 function NavBar(props) {
   return (
     <nav className="navbar navbar-inverse">
@@ -10,6 +11,9 @@ function NavBar(props) {
             <a>
               Tasks <span className="badge">{props.taskCount}</span>
             </a>
+          </li>
+          <li className="btn">
+            <AddTaskModal></AddTaskModal>
           </li>
         </ul>
       </div>

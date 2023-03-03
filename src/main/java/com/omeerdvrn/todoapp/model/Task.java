@@ -18,7 +18,6 @@ public class Task {
 
     @Id
     private String id;
-
     private String title;
     private String completed;
 }

@@ -1,6 +1,7 @@
 package com.omeerdvrn.todoapp.controller;
 
 import com.omeerdvrn.todoapp.dto.TaskDto;
+import com.omeerdvrn.todoapp.model.Task;
 import com.omeerdvrn.todoapp.service.TaskService;
 
 import org.springframework.http.HttpStatus;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/v1/tasks")
 public class TaskController {
@@ -23,6 +25,11 @@ public class TaskController {
     private ResponseEntity<List<TaskDto>> readAll(){
         List<TaskDto> taskDtos = taskService.readAll();
         return ResponseEntity.ok(taskDtos);
+    }
+
+    @GetMapping("/readWithId")
+    private ResponseEntity<List<Task>> readAllWithId(){
+        return ResponseEntity.ok(taskService.readWithIds());
     }
 
     @GetMapping("/{id}")

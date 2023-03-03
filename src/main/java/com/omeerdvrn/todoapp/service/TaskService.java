@@ -31,6 +31,11 @@ public class TaskService {
         return taskDtos;
     }
 
+    public List<Task> readWithIds(){
+        List<Task> tasks = taskRepository.findAll();
+        return tasks;
+    }
+
     public TaskDto readById(String id) {
         Task task = taskRepository.findById(id).orElse(null);
         if (task != null) {
