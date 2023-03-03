@@ -1,20 +1,22 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import AddTaskModal from "./components/AddTaskModal";
 import NavBar from "./components/NavBar";
 import Task from "./components/Task";
 
 export let TaskCount = 0;
-let isFirst = true;
 function TaskRenderer() {
   const [tasks, setTasks] = useState([{}]);
+  const [fetched, setFetched] = useState(false);
   useEffect(() => {
-    isFirst = false;
     axios.get("http://localhost:8080/v1/tasks/readWithId").then((response) => {
       setTasks(response.data);
       TaskCount = tasks.length;
+      setFetched(true);
     });
   });
+  while (!fetched) {
+    return;
+  }
 
   return (
     <React.Fragment>
