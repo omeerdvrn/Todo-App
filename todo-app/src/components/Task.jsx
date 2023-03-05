@@ -30,7 +30,8 @@ function Task(props) {
   };
   return (
     <div className="form-group">
-      <div className="form-control">
+      <div 
+       className="form-control">
         <input
           type="checkbox"
           defaultChecked={props.completed === "yes"}

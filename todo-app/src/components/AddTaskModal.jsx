@@ -39,8 +39,8 @@ function AddTaskModal() {
         <Modal.Header>
           <Modal.Title>Add Task</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <div className="form-group">
+        <Modal.Body style={{ background: "#CBE4DE" }}>
+          <div style={{ background: "#CBE4DE" }} className="form-group">
             <label>Title : </label>
             <input
               className="form-group-item"

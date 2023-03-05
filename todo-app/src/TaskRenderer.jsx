@@ -21,24 +21,32 @@ function TaskRenderer() {
 
   return (
     <React.Fragment>
-      <NavBar taskCount={tasks.length}></NavBar>
-      <div style={{ width: 400 }} className="container">
-        <ul className="list-group">
-          {tasks.map((task, index) => (
-            <div key={index}>
-              <li key={index} className="list-group-item">
-                <Task
-                  id={task.id}
-                  title={task.title}
-                  completed={task.completed}
-                  creationDate={task.creationDate}
-                  endDate={task.endDate}
-                ></Task>
-              </li>
-              <br />
-            </div>
-          ))}
-        </ul>
+      <div style={{ background: "#2C3333" }}>
+        <NavBar taskCount={tasks.length}></NavBar>
+        <div style={{ width: 400 }} className="container">
+          <ul className="list-group">
+            {tasks.map((task, index) => (
+              <React.Fragment>
+                <div style={{ background: "#CBE4DE" }} key={index}>
+                  <li
+                    style={{ background: "#CBE4DE" }}
+                    key={index}
+                    className="list-group-item"
+                  >
+                    <Task
+                      id={task.id}
+                      title={task.title}
+                      completed={task.completed}
+                      creationDate={task.creationDate}
+                      endDate={task.endDate}
+                    ></Task>
+                  </li>
+                </div>
+                <br />
+              </React.Fragment>
+            ))}
+          </ul>
+        </div>
       </div>
     </React.Fragment>
   );

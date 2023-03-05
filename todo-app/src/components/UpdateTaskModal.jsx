@@ -39,8 +39,8 @@ function UpdateTaskModal(props) {
         <Modal.Header>
           <Modal.Title>Update Task</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <div className="form-group">
+        <Modal.Body style={{ background: "#CBE4DE" }}>
+          <div style={{ background: "#CBE4DE" }} className="form-group">
             <label>Title : </label>
             <input
               className="form-group-item"
@@ -51,6 +51,7 @@ function UpdateTaskModal(props) {
                 console.log(`Title value has changed to ${e.target.value}!`);
               }}
             />
+            <label> End Date: </label>
             <input
               type="date"
               name="endDate"
