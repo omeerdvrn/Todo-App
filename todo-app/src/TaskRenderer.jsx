@@ -9,7 +9,8 @@ function TaskRenderer() {
   const [fetched, setFetched] = useState(false);
   useEffect(() => {
     axios.get("http://localhost:8080/v1/tasks/readWithId").then((response) => {
-      setTasks(response.data);
+      let sorted = response.data.reverse();
+      setTasks(sorted);
       TaskCount = tasks.length;
       setFetched(true);
     });

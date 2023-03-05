@@ -37,17 +37,21 @@ function Task(props) {
         <label className="container-fluid">{props.title}</label>
       </div>
       <hr />
-      <UpdateTaskModal
-        id={props.id}
-        title={props.title}
-        completed={props.completed}
-      ></UpdateTaskModal>
-      <button
-        className="btn btn-danger btn-sm container-fluid"
-        onClick={deleteTask}
-      >
-        Delete
-      </button>
+      <span>
+        <UpdateTaskModal
+          id={props.id}
+          title={props.title}
+          completed={props.completed}
+        ></UpdateTaskModal>
+        <button className="btn btn-danger btn-sm" onClick={deleteTask}>
+          Delete
+        </button>
+        <span style={{ "margin-right": "2%" }} className="navbar-right 10px">
+          <strong>Start Date:</strong>13.12.2023
+          <br />
+          <strong>End Date:</strong>13.12.2023
+        </span>
+      </span>
     </div>
   );
 }

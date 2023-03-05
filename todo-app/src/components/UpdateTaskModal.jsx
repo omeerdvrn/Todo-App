@@ -44,7 +44,7 @@ function UpdateTaskModal(props) {
               type="text"
               value={title === "" ? props.title : title}
               onChange={(e) => {
-                setTitle(e.target.value);
+                if (e.target.value !== "") setTitle(e.target.value);
                 console.log(`Title value has changed to ${e.target.value}!`);
               }}
             />
