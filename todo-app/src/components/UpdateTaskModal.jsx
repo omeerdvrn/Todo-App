@@ -5,8 +5,8 @@ import Modal from "react-bootstrap/Modal";
 
 function UpdateTaskModal(props) {
   const [show, setShow] = useState(false);
-  const [title, setTitle] = useState("");
-  const [date, setDate] = useState("");
+  const [title, setTitle] = useState(props.title);
+  const [date, setDate] = useState(props.endDate);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleTaskUpdate = () => {
@@ -17,7 +17,7 @@ function UpdateTaskModal(props) {
         title: title,
         completed: props.completed,
         creationDate: props.creationDate,
-        endDate: props.endDate,
+        endDate: date,
       },
     })
       .then((e) => {

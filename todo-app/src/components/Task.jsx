@@ -29,9 +29,8 @@ function Task(props) {
       });
   };
   return (
-    <div className="form-group">
-      <div 
-       className="form-control">
+    <div key={props.id} className="form-group">
+      <div className="form-control">
         <input
           type="checkbox"
           defaultChecked={props.completed === "yes"}
