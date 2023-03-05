@@ -5,7 +5,11 @@ import com.omeerdvrn.todoapp.model.Task;
 import com.omeerdvrn.todoapp.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -42,6 +46,8 @@ public class TaskService {
             TaskDto dto = TaskDto.builder()
                     .title(task.getTitle())
                     .completed(task.getCompleted())
+                    .creationDate(task.getCreationDate())
+                    .endDate(task.getEndDate())
                     .build();
             return dto;
         }
@@ -52,6 +58,8 @@ public class TaskService {
         Task newTask = Task.builder()
                 .title(taskDto.getTitle())
                 .completed(taskDto.getCompleted())
+                .creationDate(LocalDate.now())
+                .endDate(taskDto.getEndDate())
                 .build();
         taskRepository.save(newTask);
 
@@ -64,6 +72,8 @@ public class TaskService {
                     .id(id)
                     .title(newTaskDto.getTitle())
                     .completed(newTaskDto.getCompleted())
+                    .creationDate(newTaskDto.getCreationDate())
+                    .endDate(newTaskDto.getEndDate())
                     .build();
             taskRepository.save(task);
 

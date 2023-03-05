@@ -16,7 +16,7 @@ function TaskRenderer() {
     });
   });
   while (!fetched) {
-    return;
+    return <h3 className="container">Please wait! Fetching data ...</h3>;
   }
 
   return (
@@ -31,6 +31,8 @@ function TaskRenderer() {
                   id={task.id}
                   title={task.title}
                   completed={task.completed}
+                  creationDate={task.creationDate}
+                  endDate={task.endDate}
                 ></Task>
               </li>
               <br />

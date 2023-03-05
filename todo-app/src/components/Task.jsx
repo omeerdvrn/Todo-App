@@ -17,6 +17,8 @@ function Task(props) {
       data: {
         title: props.title,
         completed: st.target.checked ? "yes" : "no",
+        creationDate: props.creationDate,
+        endDate: props.endDate,
       },
     })
       .then((e) => {
@@ -42,14 +44,18 @@ function Task(props) {
           id={props.id}
           title={props.title}
           completed={props.completed}
+          creationDate={props.creationDate}
+          endDate={props.endDate}
         ></UpdateTaskModal>
         <button className="btn btn-danger btn-sm" onClick={deleteTask}>
           Delete
         </button>
-        <span style={{ "margin-right": "2%" }} className="navbar-right 10px">
-          <strong>Start Date:</strong>13.12.2023
+        <span style={{ marginRight: "2%" }} className="navbar-right 10px">
+          <strong>Creation Date:</strong>
+          {props.creationDate}
           <br />
-          <strong>End Date:</strong>13.12.2023
+          <strong>End Date:</strong>
+          {props.endDate}
         </span>
       </span>
     </div>

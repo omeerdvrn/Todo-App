@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Document("tasks")
@@ -20,4 +22,6 @@ public class Task {
     private String id;
     private String title;
     private String completed;
+    private LocalDate creationDate;
+    private LocalDate endDate;
 }

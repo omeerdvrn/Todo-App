@@ -1,7 +1,7 @@
 import AddTaskModal from "./AddTaskModal";
 function NavBar(props) {
   return (
-    <nav className="navbar navbar-inverse">
+    <nav className="navbar navbar-inverse ">
       <div className="container-fluid">
         <div className="navbar-header">
           <a className="navbar-brand">Todo App</a>

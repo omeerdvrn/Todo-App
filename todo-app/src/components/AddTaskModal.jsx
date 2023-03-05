@@ -6,6 +6,7 @@ import Modal from "react-bootstrap/Modal";
 function AddTaskModal() {
   const [show, setShow] = useState(false);
   const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -16,6 +17,7 @@ function AddTaskModal() {
       data: {
         title: title,
         completed: "no",
+        endDate: date,
       },
     })
       .then((e) => {
@@ -47,6 +49,14 @@ function AddTaskModal() {
                 setTitle(e.target.value);
                 // console.log(`Title value has changed to ${e.target.value}!`);
               }}
+            />
+            <br />
+            <label>End Date: </label>
+            <input
+              type="date"
+              name="endDate"
+              id=""
+              onChange={(e) => setDate(e.target.value)}
             />
             <br />
             {/* <label>Description</label>
